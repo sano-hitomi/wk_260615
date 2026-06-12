@@ -1,0 +1,24 @@
+#!/bin/sh
+# Reject files larger than 50MB
+
+MAX_SIZE=$((50 * 1024 * 1024))  # 50MB in bytes
+FOUND_LARGE=0
+
+while IFS= read -r file; do
+    if [ -f "$file" ]; then
+        size=$(wc -c < "$file")
+        if [ "$size" -gt "$MAX_SIZE" ]; then
+            echo "ERROR: Large file detected: $file ($(( size / 1024 / 1024 ))MB)"
+            FOUND_LARGE=1
+        fi
+    fi
+done <<EOF
+$(git diff --cached --name-only)
+EOF
+
+if [ "$FOUND_LARGE" -eq 1 ]; then
+    echo "Commit aborted. Add large files to .gitignore or use Git LFS."
+    exit 1
+fi
+
+exit 0
