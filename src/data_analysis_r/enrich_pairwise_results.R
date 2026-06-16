@@ -34,7 +34,7 @@
 # -----------------------------------------------------------------------------
 # Settings
 # -----------------------------------------------------------------------------
-TRANSFORM    <- "none"   # "none" | "log2" | "log2FC"
+TRANSFORM    <- "log2"   # "none" | "log2" | "log2FC"
 
 IN_PAIRWISE  <- file.path("data/production/processed",
                            sprintf("pairwise_test_results_%s_production.csv", TRANSFORM))

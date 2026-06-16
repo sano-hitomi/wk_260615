@@ -1,0 +1,101 @@
+"","V1","InChIKey","Name","mechanism_class","vip_max"
+"1",1,"VXAHTPDZSOTOPQ-XCVCLJGOSA-N","low score: [6-[2-(3_4-dihydroxyphenyl)-8-hydroxy-4-oxochromen-7-yl]oxy-3_4_5-trihydroxyoxan-2-yl]methyl (E)-3-(4-hydroxyphenyl)prop-2-enoate","Early_specific",1.9503
+"2",2,"QZGOQORSUIQVIR-UIXQMLBBSA-N","low score: 2-[(3R_8aS)-3_4'-dihydroxy-4_4_7_8a-tetramethyl-6'-oxospiro[2_3_4a_5_6_7-hexahydro-1H-naphthalene-8_2'-3_8-dihydrofuro[2_3-e]isoindole]-7'-yl]pentanedioic acid","Early_specific",1.9444
+"3",3,"BPXPXWFPHBEWAG-UHFFFAOYSA-N","low score: (NAG)(NAM)-AqKAA[3-NH2-GGGGG];(G-G)-(NAG)(NAM)-AqKAA[3-NH2-GGGGG]","Early_specific",1.9432
+"4",4,"VEUUVHDNQCONHH-UHFFFAOYSA-N","4-[({[5-(3-cyclohexyl-1-methyl-1H-pyrazol-5-yl)-1-azabicyclo[2.2.2]octan-2-yl]methyl}amino)methyl]-N,N-dimethylaniline","Early_specific",1.926
+"5",5,"NOOCSNJCXJYGPE-UHFFFAOYSA-N","low score: Flunixine","Early_specific",1.888
+"6",6,"CAHQQYHQUHYOGU-KLQKCIPISA-N","(3Z_6E)-2_2_6-trimethyl-12-oxabicyclo[8.2.1]trideca-3_6_10(13)-triene-5_11-dione","Early_specific",1.8636
+"7",7,"RYVQUCPUCSYNBC-UHFFFAOYSA-N","low score: 5_7-dihydroxy-8-(1-(2-hydroxy-6-methoxyquinolin-3-yl)-3-(4-methylpiperazin-1-yl)-3-oxopropyl)-2-phenyl-4H-chromen-4-one","Early_specific",1.8422
+"8",8,"GRQROVWZGGDYSW-ZQMFMVRBSA-N","low score: methyl (4R)-4-((3R_5S_7S_9S_10S_13R_14S_17R)-3_7-dihydroxy-10_13-dimethylhexadecahydro-1H-cyclopenta[a]phenanthren-17-yl)pentanoate","Early_specific",1.8234
+"9",9,"PMVCHAWVCIWVLP-UHFFFAOYSA-N","low score: Parishin C","Early_specific",1.8126
+"10",10,"VSJKWCGYPAHWDS-FQEVSTJZSA-N","low score: Camptothecin","Early_specific",1.7858
+"11",11,"GJPICJJJRGTNOD-UHFFFAOYSA-N","low score: Bosentan","Early_specific",1.7801
+"12",12,"UTSXERRKRAEDOV-UHFFFAOYSA-O","low score: Amidosulfobetaine-14","Early_specific",1.7744
+"13",13,"YRQNFHSTTZXQBU-HTVHDVGDSA-N","low score: NCGC00347767-02_C32H36O13_6H-10_13-Etheno-19_15-metheno-3H_15H_23H-pyrano[3_4-c][1_7_14]trioxacycloheneicosin-6_23-dione_ 4-ethylidene-3-(beta-D-glucopyranosyloxy)-4_4a_5_8_9_20_21-heptahydro-16-hydroxy-_ (3S_4Z_4aS)-","Early_specific",1.7737
+"14",14,"BPHUMAUSBOVDPO-UHFFFAOYSA-N","low score: MMV010576","Early_specific",1.7628
+"15",15,"MUVPZRLZLOTAOL-BLFJEXFJSA-N","low score: NCGC00381281-01_C23H30O13_alpha-D-Glucopyranoside_ 4-O-[(2E)-1-oxo-3-phenyl-2-propen-1-yl]-beta-D-fructofuranosyl_ 6-acetate","Early_specific",1.7582
+"16",16,"CPMZLIRNESDGDD-RTKYVFNWSA-N","low score: [(1S_4aS_6S_7R_7aS)-6-acetyloxy-4-[[(2R_3R_4S_5S_6R)-3-acetyloxy-4_5-dihydroxy-6-(hydroxymethyl)oxan-2-yl]oxymethyl]-7-(acetyloxymethyl)-7-hydroxy-4a_5_6_7a-tetrahydro-1H-cyclopenta[c]pyran-1-yl] 3-methylbutanoate","Early_specific",1.7515
+"17",17,"YJSHRIGISKAHBT-JFTDWGSPSA-N","low score: (E)-3-[6-[(2S_3R_4S_5S_6R)-3_4_5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1_3-benzodioxol-5-yl]prop-2-enoic acid","Early_specific",1.748
+"18",18,"WJPRKOJNQIZCGY-OZOLURDPSA-N","low score: (1S_4aS_7R_7aS)-7-hydroxy-7-[[(E)-3-(4-hydroxyphenyl)prop-2-enoyl]oxymethyl]-1-[(2S_3R_4S_5S_6R)-3_4_5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-4a_7a-dihydro-1H-cyclopenta[c]pyran-4-carboxylic acid","Early_specific",1.7358
+"19",19,"YJRLSCDUYLRBIZ-UHFFFAOYSA-N","Sulochrin_120096","Early_specific",1.7354
+"20",20,"RLGYLKXDNQBDCU-HUSRUCGJSA-N","low score: NCGC00169017-02_C30H38O15_(1aS_1bS_2S_5aR_6S_6aS)-6-({6-Deoxy-2-O-[(2E)-3-phenyl-2-propenoyl]-alpha-L-mannopyranosyl}oxy)-1a-(hydroxymethyl)-1a_1b_2_5a_6_6a-hexahydrooxireno[4_5]cyclopenta[1_2-c]pyran-2-yl beta-D-glucopyranoside","Early_specific",1.7211
+"21",21,"RVWWDDKOKZXKCJ-ZOLYHUHESA-N","8-hydroxy-6-methoxy-7-[(2S_3R_4S_5S_6R)-3_4_5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxychromen-2-one","Early_specific",1.7174
+"22",22,"GZSOSUNBTXMUFQ-UHFFFAOYSA-N","low score: Diosmin","Early_specific",1.7109
+"23",23,"UCFGUMMLHWLLKJ-UHFFFAOYSA-N","low score: NCGC00347672-02!N-[4_5-dihydroxy-2-[[4-[hydroxy(phenyl)methyl]-5-oxo-3-phenyl-2H-furan-2-yl]oxy]-6-(methoxymethyl)oxan-3-yl]acetamide [IIN-based on: CCMSLIB00000848988]","Early_specific",1.7034
+"24",24,"OGSBUKJUDHAQEA-WMCAAGNKSA-N","low score: Pralatrexate(Folotyn)","Early_specific",1.7019
+"25",25,"GBADBFAXAWZGHM-UHFFFAOYSA-N","low score: 2-amino-4-hydroxypyrimidine-5-carboxylic acid","Early_specific",1.7009
+"26",26,"GNDDBOHLMOANGU-TYGLCWKWSA-N","low score: NCGC00384704-01![(2R_3S_4R_5R_6R)-6-[2-(3_4-dihydroxyphenyl)ethoxy]-4_5-dihydroxy-2-[[(2S_3R_4S_5R)-3_4_5-trihydroxyoxan-2-yl]oxymethyl]oxan-3-yl] (E)-3-(3_4-dihydroxyphenyl)prop-2-enoate [IIN-based: Match]","Early_specific",1.6949
+"27",27,"CWVRJTMFETXNAD-JUHZACGLSA-N","(1S_3R_4R_5R)-3-{[(2E)-3-(3_4-dihydroxyphenyl)-2-propenoyl]oxy}-1_4_5-trihydroxycyclohexanecarboxylic acid","Early_specific",1.6896
+"28",28,"VANIIUGEHGLNHB-AATRIKPKSA-N","low score: 3-[(E)-2-(3-hydroxyphenyl)ethenyl]-5-methoxyphenol","Early_specific",1.6818
+"29",29,"VXAHTPDZSOTOPQ-XCVCLJGOSA-N","low score: [6-[2-(3_4-dihydroxyphenyl)-8-hydroxy-4-oxochromen-7-yl]oxy-3_4_5-trihydroxyoxan-2-yl]methyl (E)-3-(4-hydroxyphenyl)prop-2-enoate","Early_specific",1.6742
+"30",30,"OZDABLANSWPSGY-UHFFFAOYSA-N","low score: NCGC00380876-01_C29H38O14_Methyl 1_4-bis(beta-D-glucopyranosyloxy)-3-(3-methyl-2-buten-1-yl)-2-naphthoate","Early_specific",1.6722
+"31",31,"WKJDWDLHIOUPPL-JSOSNVBQSA-N","PS(14:0/14:0)","Early_specific",1.6653
+"32",32,"ZGRZULFRVWCUPF-UHFFFAOYSA-N","low score: Nuezhenidic acid","Early_specific",1.6612
+"33",33,"DBUOUVZMYWYRRI-YWEKDMGLSA-N","low score: verproside","Early_specific",1.6563
+"34",34,"VXAHTPDZSOTOPQ-XCVCLJGOSA-N","low score: [6-[2-(3_4-dihydroxyphenyl)-8-hydroxy-4-oxochromen-7-yl]oxy-3_4_5-trihydroxyoxan-2-yl]methyl (E)-3-(4-hydroxyphenyl)prop-2-enoate","Early_specific",1.649
+"35",35,"PDEJWCOMIACOMR-UHFFFAOYSA-N","low score: Putative (3-hydroxyoctadecanoyl)glycine","Early_specific",1.6411
+"36",36,"CRAONLIHLOSKGE-UHFFFAOYSA-N","low score: NCGC00347609-02!9-(2_3-dihydroxy-3-methylbutyl)-4-methoxyfuro[3_2-g]chromen-7-one [IIN-based on: CCMSLIB00000848055]","Early_specific",1.638
+"37",37,"MZWQZYDNVSKPPF-ROUUACIJSA-N","low score: Isorangiformic acid","Early_specific",1.6306
+"38",38,"XKAYFELZCPZDEK-IPOZFMEPSA-N","NCGC00385199-01!2-[3_4-bis[[(2S_3R_4S_5S_6R)-3_4_5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy]phenyl]-5_7-dihydroxychromen-4-one","Early_specific",1.6295
+"39",39,"ZISDTRGMDDVTKY-CZIZESTLSA-N","low score: NCGC00386025-01!hexadecyl (E)-3-(4-hydroxy-3-methoxyphenyl)prop-2-enoate [IIN-based: Match]","Early_specific",1.6248
+"40",40,"IKQSIKPOUMLPKK-UHFFFAOYSA-N","low score: NCGC00384949-01!2-(hydroxymethyl)-6-(2_20_21-trihydroxydocosan-3-yloxy)oxane-3_4_5-triol","Early_specific",1.6187
+"41",41,"YFQNPQXDQIZKSV-BIYJUCAWSA-N","UNPD219755","Early_specific",1.6128
+"42",42,"UTSXERRKRAEDOV-UHFFFAOYSA-O","low score: Amidosulfobetaine-14","Early_specific",1.6114
+"43",43,"SNKAWJBJQDLSFF-YEUCEMRANA-N","PC(18:1(9Z)/18:1(9Z))","Early_specific",1.6061
+"44",44,"NXQOQNROJJFYCJ-FZFXZXLVSA-N","androst-16-ene","Early_specific",1.6043
+"45",45,"PPCBHTAMQFLZHZ-NKVRVIBCSA-N","low score: AgelasineE/F","Early_specific",1.5938
+"46",46,"JLPULHDHAOZNQI-ZTIMHPMXSA-N","PC(16:0/18:2(9Z,12Z))","Early_specific",1.5911
+"47",47,"PWWSSIYVTQUJQQ-UHFFFAOYSA-N","dioctadecyl 3,3'-thiodipropionate","Early_specific",1.589
+"48",48,"ZTNYRNGTBAGYIZ-VAWYXSNFSA-N","low score: (E)-1_4-bis(4-hydroxy-3-methoxyphenyl)-2_3-dimethylbut-2-ene-1_4-dione","Early_specific",1.5846
+"49",49,"DKDGWAKCXBFTMM-KZKMBZSSSA-N","low score: Rhizocarpic acid","Early_specific",1.5819
+"50",50,"POVCYOFRCMBMKD-LMNIDFBRSA-N","low score: Rhodiolin","Early_specific",1.5799
+"51",51,"XSCHRSMBECNVNS-UHFFFAOYSA-N","low score: Quinoxaline","Early_specific",1.5775
+"52",52,"PESKGJQREUXSRR-JAGYRSRJSA-N","low score: Coprostanone","Early_specific",1.5756
+"53",53,"KNWHKVBHCLQVFX-VCIDKZPKSA-N","low score: Lactosyl (?) C12 Ceramide","Early_specific",1.5702
+"54",54,"LGGJSHGJCMYMKU-UHFFFAOYSA-N","low score: NCGC00380192-01! [IIN-based on: CCMSLIB00000847542]","Early_specific",1.5612
+"55",55,"UTSXERRKRAEDOV-UHFFFAOYSA-O","low score: Amidosulfobetaine-14","Early_specific",1.5604
+"56",56,"TZXKOCQBRNJULO-UHFFFAOYSA-N","low score: 3-hydroxy-1_2-dimethylpyridin-4(1H)-one","Early_specific",1.5563
+"57",57,"OYXZMSRRJOYLLO-RVOWOUOISA-N","low score: 7-alpha-hydroxy cholesterol","Early_specific",1.5474
+"58",58,"HYMAKZYMIDUXML-BTUKQMCYSA-N","low score: NCGC00384888-01_C21H32O9_","Early_specific",1.5459
+"59",59,"IYFMBSVAOKIIHT-FENIPWANSA-N","low score: 3-[4_5-dihydroxy-6-(hydroxymethyl)-3-[(2S_3R_4R_5R_6S)-3_4_5-trihydroxy-6-methyloxan-2-yl]oxyoxan-2-yl]oxy-5-hydroxy-2-(4-hydroxyphenyl)-7-[3_4_5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxychromen-4-one","Early_specific",1.5451
+"60",60,"FIQMHBFVRAXMOP-UHFFFAOYSA-N","Triphenylphosphine oxide","Early_specific",1.5437
+"61",61,"MQIUGAXCHLFZKX-UHFFFAOYSA-N","low score: Dioctylphthalate","Early_specific",1.5424
+"62",62,"FMOWVDYLHOGBCK-MMXIDJDVSA-N","PE(24:1(15Z)/18:1(9Z))","Early_specific",1.5394
+"63",63,"VANIIUGEHGLNHB-AATRIKPKSA-N","low score: 3-[(E)-2-(3-hydroxyphenyl)ethenyl]-5-methoxyphenol","Early_specific",1.5391
+"64",64,"KNCNSYQYJUBLPW-UHFFFAOYSA-N","low score: 5-[6-[[3_4-dihydroxy-4-(hydroxymethyl)oxolan-2-yl]oxymethyl]-3_4_5-trihydroxyoxan-2-yl]oxy-4-(3_4-dihydroxyphenyl)-7-methoxychromen-2-one","Early_specific",1.5382
+"65",65,"DBODJJZRZFZBBD-XXYWQWTJSA-N","low score: Chasmanine","Early_specific",1.537
+"66",66,"NOOCSNJCXJYGPE-UHFFFAOYSA-N","low score: Flunixine","Early_specific",1.5354
+"67",67,"KBPHJBAIARWVSC-NSIPBSJQSA-N","low score: Lutein","Early_specific",1.5336
+"68",68,"NHOWDZOIZKMVAI-UHFFFAOYSA-N","Fenarimol","Early_specific",1.53
+"69",69,"GYMNFSIEEPLWGI-UHFFFAOYSA-N","low score: (NAG)(DAM)-AqOA[3-NH2-SD];(G-G)-(NAG)(NAM)-AqOA[3-NH2-SD]","Early_specific",1.5291
+"70",70,"KWIUHFFTVRNATP-UHFFFAOYSA-N","low score: glycine betaine","Early_specific",1.5281
+"71",71,"ZISDTRGMDDVTKY-CZIZESTLSA-N","low score: NCGC00386025-01!hexadecyl (E)-3-(4-hydroxy-3-methoxyphenyl)prop-2-enoate [IIN-based: Match]","Early_specific",1.5258
+"72",72,"PUIAUUSJWDDCLR-JBJHWARDSA-N","low score: NCGC00381148-01_C34H54O23_6-O-[(2E)-2-Methyl-2-butenoyl]-beta-D-glucopyranosyl-(1->2)-6-O-[(2E)-2-methyl-2-butenoyl]-alpha-D-glucopyranosyl beta-D-glucopyranosyl-(1->2)-alpha-D-glucopyranoside","Early_specific",1.5254
+"73",73,"OOSAFBWVRUMCBZ-UHFFFAOYSA-N","low score: MMV023860","Early_specific",1.5252
+"74",74,"UYRDHEJRPVSJFM-VSWVFQEASA-N","low score: Peridinin","Early_specific",1.5239
+"75",75,"JLPULHDHAOZNQI-ZTIMHPMXSA-N","PC(16:0/18:2(9Z,12Z))","Early_specific",1.5207
+"76",76,"SNKAWJBJQDLSFF-YEUCEMRANA-N","PC(18:1(9Z)/18:1(9Z))","Early_specific",1.5191
+"77",77,"BRHVVSCMXSBYAI-XXXCGRBJSA-N","PC(20:0/20:3(8Z,11Z,14Z))","Early_specific",1.5158
+"78",78,"KWIUHFFTVRNATP-UHFFFAOYSA-N","low score: BETAINE","Early_specific",1.5147
+"79",79,"KCNBSSYOJRUKOM-JALPNNRCSA-N","PE(P-18:0/20:5(5Z,8Z,11Z,14Z,17Z))","Early_specific",1.5102
+"80",80,"SSVBRGDWGWZKPY-GDULHUNONA-N","UNPD48357","Early_specific",1.5079
+"81",81,"QCDBYUUEYOONDY-UHFFFAOYSA-N","low score: gamma-actinorhodin","Early_specific",1.507
+"82",82,"GTZJXEKBDFHJCO-INVHTWQFSA-N","low score: (2R_3R_4S_5R_6R)-2-(acetoxymethyl)-6-((3-(benzo[d][1_3]dioxol-5-yl)-6-ethyl-2-methyl-4-oxo-4H-chromen-7-yl)oxy)tetrahydro-2H-pyran-3_4_5-triyl triacetate","Early_specific",1.5061
+"83",83,"WLSOGIGMSWCVID-UHFFFAOYSA-N","low score: NCGC00169618-03!6-[(6_8-dihydroxy-7-methoxy-3-methyl-1-oxo-3_4-dihydroisochromen-4-yl)oxy]-4_8-dihydroxy-7-methoxy-3-methyl-3_4-dihydroisochromen-1-one","Early_specific",1.5057
+"84",84,"RZGFUGXQKMEMOO-BSANDHCLSA-N","low score: NCGC00385243-01_C12H18O4_{(1R_2R)-2-[(2Z)-5-Hydroxy-2-penten-1-yl]-3-oxocyclopentyl}acetic acid","Early_specific",1.5024
+"85",85,"NONWRJXAJGEWOR-GMTLTCSKSA-N","low score: (2R_3R_4S_5S_6R)-2-[[(2R_3S_4S_5R_6S)-6-[4-[3-[3_5-dimethoxy-4-[(2S_3R_4S_5S_6R)-3_4_5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyphenyl]-1_3_3a_4_6_6a-hexahydrofuro[3_4-c]furan-6-yl]-2_6-dimethoxyphenoxy]-3_4_5-trihydroxyoxan-2-yl]methoxy]-6-(hydroxymethyl)oxane-3_4_5-triol","Early_specific",1.5008
+"86",86,"PWWSSIYVTQUJQQ-UHFFFAOYSA-N","dioctadecyl 3,3'-thiodipropionate","Early_specific",1.4961
+"87",87,"DATAGRPVKZEWHA-YFKPBYRVSA-N","low score: Theanine","Early_specific",1.4908
+"88",88,"VGXMHKCJOYRSFM-SSLIGAGASA-N","UNPD229035","Early_specific",1.4896
+"89",89,"ODHCTXKNWHHXJC-VKHMYHEASA-N","low score: L-Pyroglutamic acid; CE0; ODHCTXKNWHHXJC-VKHMYHEASA-N","Early_specific",1.4888
+"90",90,"UWRDCNVTKORVMI-QSQWZJICSA-N","low score: NCGC00169156-03_C24H28O9_[(2'R_3R_4a'S_5S_5'R_6'S_8a'S)-6'-Acetoxy-5-(3-furyl)-2'-methyl-2_4'-dioxooctahydrodispiro[furan-3_1'-naphthalene-5'_2''-oxiran]-4a'(2'H)-yl]methyl acetate","Early_specific",1.4882
+"91",91,"VJQANBSDAGCDJE-UHFFFAOYSA-N","low score: NCGC00380283-01!4-[5-[[4-[5-[acetyl(hydroxy)amino]pentylamino]-4-oxobutanoyl]-hydroxyamino]pentylamino]-4-oxobutanoic acid","Early_specific",1.4871
+"92",92,"SNKAWJBJQDLSFF-YEUCEMRANA-N","PC(18:1(9Z)/18:1(9Z))","Early_specific",1.48
+"93",93,"HZIBYJCDCHVSPK-RKUDFBBFSA-N","low score: Cimiracemoside D","Early_specific",1.4737
+"94",94,"RGHPCLZJAFCTIK-UHFFFAOYSA-N","low score: 2-Methylpyrrolidine; CE0; RGHPCLZJAFCTIK-UHFFFAOYSA-N","Early_specific",1.4717
+"95",95,"UTSXERRKRAEDOV-UHFFFAOYSA-O","low score: Amidosulfobetaine-14","Early_specific",1.4674
+"96",96,"KVMPUXDNESXNOH-UHFFFAOYSA-N","low score: Tris(1-chloro-2-propyl)phosphate","Early_specific",1.4652
+"97",97,"WTJKGGKOPKCXLL-VYOBOKEXSA-N","low score: PC(16:0/18:1(9Z))","Early_specific",1.463
+"98",98,"DAZYZDVAACSMFA-DYFSFZQGSA-N","PE(15:0/20:1(11Z))","Early_specific",1.4627
+"99",99,"HOEVRHHMDJKUMZ-UHFFFAOYSA-N","low score: Isofraxidin","Early_specific",1.4575
+"100",100,"IAONIGCHXNWXRN-IUDBTDONSA-N","low score: N-((S)-1_2_3-trimethoxy-10-(((S)-1-(8-methoxy-3_4-dihydro-1H-pyrido[4_3-b]indol-2(5H)-yl)-4-(methylthio)-1-oxobutan-2-yl)amino)-9-oxo-5_6_7_9-tetrahydrobenzo[a]heptalen-7-yl)acetamide","Early_specific",1.4545
