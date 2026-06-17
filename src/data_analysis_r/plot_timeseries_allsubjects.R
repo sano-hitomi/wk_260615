@@ -139,19 +139,7 @@ if (!is.finite(diff(ylim_global))) ylim_global <- c(-1, 1)
 
 cat(sprintf("Global y-axis (log2FC): [%.3f, %.3f]\n", ylim_global[1], ylim_global[2]))
 
-# ---------------------------------------------------------------------------
-# 5. Metadata strings for panel titles
-# ---------------------------------------------------------------------------
-get_label <- function(align_id) {
-  m <- feat_meta[feat_meta$Alignment_ID == align_id, ]
-  if (nrow(m) == 0) return(sprintf("ID %d", align_id))
-  name <- m$Metabolite_name[1]
-  rt   <- sprintf("%.2f", as.numeric(m$Rt_min[1]))
-  mz   <- sprintf("%.4f", as.numeric(m$Mz[1]))
-  sprintf("Align %d | %s | Rt=%s | m/z=%s", align_id, name, rt, mz)
-}
-label414  <- get_label(TARGET_IDS[1])
-label4263 <- get_label(TARGET_IDS[2])
+# (panel titles use Alignment ID only; no metadata label needed)
 
 # ---------------------------------------------------------------------------
 # 6. Helper: draw one subject's time-series panel
@@ -162,7 +150,7 @@ y_label <- switch(TRANSFORM,
   log2FC  = "log2FC"
 )
 
-draw_subject_panel <- function(fc_mat, subj, title_str) {
+draw_subject_panel <- function(fc_mat, subj, align_id) {
   vals <- fc_mat[as.character(subj), ]
 
   plot(NA,
@@ -170,9 +158,9 @@ draw_subject_panel <- function(fc_mat, subj, title_str) {
        ylim  = ylim_global,
        xlab  = "Timepoint",
        ylab  = y_label,
-       main  = title_str,
+       main  = as.character(align_id),
        xaxt  = "n",
-       cex.main = 0.72,
+       cex.main = 0.80,
        cex.lab  = 0.70,
        cex.axis = 0.65)
   axis(1, at = seq_along(timepoints), labels = timepoints, cex.axis = 0.65)
@@ -194,6 +182,11 @@ draw_subject_panel <- function(fc_mat, subj, title_str) {
   # Data line
   lines(seq_along(timepoints), vals,
         col = "#333333", lwd = 1.4, type = "b", pch = 16, cex = 0.55)
+
+  # Subject ID label: bold text in upper-left of plot area
+  text(x = 0.85, y = ylim_global[2] - diff(ylim_global) * 0.04,
+       labels = sprintf("Sub %02d", subj),
+       adj = c(0, 1), font = 2, cex = 0.75, col = "#222222")
 }
 
 # ---------------------------------------------------------------------------
@@ -227,16 +220,8 @@ for (page in seq_len(n_pages)) {
   par(mar = PANEL_MAR, oma = PAGE_MAR)
 
   for (subj in page_subjects) {
-    # Left panel: Alignment 414
-    draw_subject_panel(
-      fc414, subj,
-      sprintf("Sub %02d  |  %s", subj, label414)
-    )
-    # Right panel: Alignment 4263
-    draw_subject_panel(
-      fc4263, subj,
-      sprintf("Sub %02d  |  %s", subj, label4263)
-    )
+    draw_subject_panel(fc414,  subj, TARGET_IDS[1])   # Left:  Alignment 414
+    draw_subject_panel(fc4263, subj, TARGET_IDS[2])   # Right: Alignment 4263
   }
 
   # Page header (outer margin)
