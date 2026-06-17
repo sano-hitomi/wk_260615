@@ -238,10 +238,10 @@ make_dual_loading_plot <- function(df, period, id_a, id_b, vip_thresh) {
       inherit.aes = FALSE
     ) +
     scale_color_manual(
-      values = c("Both"                              = "#E41A1C",
-                 sprintf("ID %d only", id_a)         = "#377EB8",
-                 sprintf("ID %d only", id_b)         = "#4DAF4A",
-                 "Low VIP"                           = "grey70"),
+      values = setNames(
+        c("#E41A1C", "#377EB8", "#4DAF4A", "grey70"),
+        c("Both", sprintf("ID %d only", id_a), sprintf("ID %d only", id_b), "Low VIP")
+      ),
       name = sprintf("VIP > %g", vip_thresh)
     ) +
     labs(
@@ -300,10 +300,10 @@ make_vip_overlap_plot <- function(df, id_a, id_b, vip_thresh) {
       inherit.aes = FALSE
     ) +
     scale_color_manual(
-      values = c("Both"                          = "#E41A1C",
-                 sprintf("ID %d only", id_a)     = "#377EB8",
-                 sprintf("ID %d only", id_b)     = "#4DAF4A",
-                 "Low VIP"                       = "grey70"),
+      values = setNames(
+        c("#E41A1C", "#377EB8", "#4DAF4A", "grey70"),
+        c("Both", sprintf("ID %d only", id_a), sprintf("ID %d only", id_b), "Low VIP")
+      ),
       name = sprintf("VIP > %g", vip_thresh)
     ) +
     labs(
