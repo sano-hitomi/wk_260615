@@ -197,7 +197,8 @@ for (i in seq_len(n_features)) {
   if (diff(yrange) == 0) yrange <- yrange + c(-1, 1)
 
   # Title
-  title_str <- sprintf("%s\nID=%s  Rt=%.2f  m/z=%.4f", display_label, align_id, rt, mz)
+  title_str <- sprintf("ID=%s (%s)  Rt=%.2f  m/z=%.4f", align_id, display_label, rt, mz)
+  #title_str <- sprintf("%s\nID=%s  Rt=%.2f  m/z=%.4f", display_label, align_id, rt, mz)
 
   # Plot empty frame
   plot(NA,

@@ -197,13 +197,21 @@ make_metabolite_page <- function(idx, df_long, pval_df, classification, y_label)
     display_name <- meta_row$Metabolite_name
   }
 
+#  title_str <- sprintf(
+#    "%s  |  ID=%s  Rt=%.2f  m/z=%.4f  [%s]",
+#    display_name, aid,
+#    round(as.numeric(meta_row$Rt_min), 2),
+#    round(as.numeric(meta_row$Mz), 4),
+#    cls
+#  )
   title_str <- sprintf(
-    "%s  |  ID=%s  Rt=%.2f  m/z=%.4f  [%s]",
+    "%s  \n  ID=%s  Rt=%.2f  m/z=%.4f  [%s]",
     display_name, aid,
     round(as.numeric(meta_row$Rt_min), 2),
     round(as.numeric(meta_row$Mz), 4),
     cls
   )
+  
 
   df_feat     <- df_long[df_long$Alignment_ID == aid, ]
   early_pvals <- unlist(pval_df[idx, c("T1vT2", "T1vT3", "T2vT3")])
