@@ -127,7 +127,7 @@ if (is.na(micro_path)) {
 
   dca_df <- lfc %>%
     filter(Alignment_ID == use_dca) %>%
-    left_join(groups %>% select(Subject, group), by = "Subject") %>%
+    left_join(groups %>% dplyr::select(Subject, group), by = "Subject") %>%
     filter(!is.na(group))
 
   tp_labels <- c("T1\n(X base)", "T2", "T3", "T4\n(Y base)", "T5", "T6")
@@ -206,7 +206,7 @@ cat(sprintf("使用する DCA Alignment_ID: %d\n", use_dca))
 
 dca_lfc <- lfc %>%
   filter(Alignment_ID == use_dca) %>%
-  select(Subject, Timepoint, dca_lfc = intensity)
+  dplyr::select(Subject, Timepoint, dca_lfc = intensity)
 
 # ── TMAO グループ ────────────────────────────────────────────────────────────
 groups <- read_csv(GROUPS_CSV, show_col_types = FALSE)
@@ -230,17 +230,17 @@ has_tp <- "Timepoint" %in% colnames(micro)
 if (has_tp) {
   cat("縦断的マイクロバイオームデータとして処理\n")
   merged <- dca_lfc %>%
-    inner_join(micro %>% select(Subject, Timepoint, cscindens), by = c("Subject", "Timepoint")) %>%
-    left_join(groups %>% select(Subject, group), by = "Subject")
+    inner_join(micro %>% dplyr::select(Subject, Timepoint, cscindens), by = c("Subject", "Timepoint")) %>%
+    left_join(groups %>% dplyr::select(Subject, group), by = "Subject")
 } else {
   cat("ベースラインマイクロバイオームデータとして処理（全時点の DCA 平均と相関）\n")
   dca_mean_subj <- dca_lfc %>%
     group_by(Subject) %>%
     summarise(dca_mean = mean(dca_lfc, na.rm = TRUE), .groups = "drop")
   merged <- micro %>%
-    select(Subject, cscindens) %>%
+    dplyr::select(Subject, cscindens) %>%
     inner_join(dca_mean_subj, by = "Subject") %>%
-    left_join(groups %>% select(Subject, group), by = "Subject") %>%
+    left_join(groups %>% dplyr::select(Subject, group), by = "Subject") %>%
     rename(dca_lfc = dca_mean)
 }
 
@@ -330,7 +330,7 @@ out_csv <- file.path(OUT_REP, "cscindens_dca_correlation.csv")
 write_csv(bind_rows(
   merged %>%
     filter(!is.na(group)) %>%
-    select(Subject, Timepoint = any_of("Timepoint"),
+    dplyr::select(Subject, Timepoint = any_of("Timepoint"),
            cscindens, dca_lfc, group),
   .id = NULL
 ), out_csv)

@@ -159,7 +159,7 @@ tp_labels <- c("T1\n(X base)", "T2", "T3", "T4\n(Y base)", "T5", "T6")
 make_ts_panel <- function(aid, label, color) {
   df <- lfc %>%
     filter(Alignment_ID == aid) %>%
-    left_join(groups %>% select(Subject, group), by = "Subject") %>%
+    left_join(groups %>% dplyr::select(Subject, group), by = "Subject") %>%
     filter(!is.na(group))
 
   if (nrow(df) == 0) {
@@ -265,14 +265,14 @@ if (nrow(dca_row) > 0 && nrow(udca_row) > 0) {
                   names_prefix = "tp", values_fill = 0) %>%
       { d <- .; for (tp in 1:6) { c <- paste0("tp", tp); if (!c %in% names(d)) d[[c]] <- 0 }; d }() %>%
       mutate(fc = ((tp5 - tp4) + (tp6 - tp4)) / 2) %>%
-      select(Subject, fc)
+      dplyr::select(Subject, fc)
   }
 
   dca_fc  <- get_y_fc(dca_id)  %>% rename(dca_fc  = fc)
   udca_fc <- get_y_fc(udca_id) %>% rename(udca_fc = fc)
 
   sc_df <- inner_join(dca_fc, udca_fc, by = "Subject") %>%
-    left_join(groups %>% select(Subject, group), by = "Subject") %>%
+    left_join(groups %>% dplyr::select(Subject, group), by = "Subject") %>%
     filter(!is.na(group))
 
   ct <- tryCatch(

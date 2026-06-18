@@ -63,7 +63,7 @@ if (has_dfconf) {
   raw$Alignment_ID <- as.integer(raw$Alignment_ID)
 
   df_adduct <- raw %>%
-    select(Alignment_ID,
+    dplyr::select(Alignment_ID,
            Metabolite_name = any_of(c("Metabolite_name", "Metabolite name")),
            Adduct          = any_of(c("Adduct", "Adduct type")),
            Average_Mz      = any_of(c("Average_Mz", "Average Mz", "Precursor m/z")),
@@ -166,7 +166,7 @@ meta_sub <- feat_meta %>%
 if (!is.null(df_adduct)) {
   adduct_sub <- df_adduct %>%
     filter(Alignment_ID %in% dca_ids_all) %>%
-    select(Alignment_ID,
+    dplyr::select(Alignment_ID,
            Adduct = any_of(c("Adduct", "Adduct type")),
            Average_Mz,
            `S/N average`   = any_of(c("S/N average", "SN_average")),
@@ -205,7 +205,7 @@ meta_sub <- meta_sub %>%
   mutate(is_current = Alignment_ID == PREFERRED_DCA_ID)
 
 cat("=== DCA 全エントリ詳細 ===\n")
-print(meta_sub %>% select(Alignment_ID, is_current, any_of(
+print(meta_sub %>% dplyr::select(Alignment_ID, is_current, any_of(
   c("Metabolite_name", "Adduct", "Average_Mz", "S/N average",
     "Total score", "Matched peaks percentage",
     "mean_intensity", "cv_pct", "n_detected")
@@ -262,7 +262,7 @@ if (length(dca_ids_all) < 2 || !file.exists(FMAT_CSV)) {
       for (j in (i + 1):n_ids) {
         ci <- id_cols[i]; cj <- id_cols[j]
         df_sc <- dca_wide %>%
-          select(label, xi = all_of(ci), xj = all_of(cj)) %>%
+          dplyr::select(label, xi = all_of(ci), xj = all_of(cj)) %>%
           filter(is.finite(xi) & is.finite(xj) & xi > 0 & xj > 0)
 
         ct <- tryCatch(cor.test(df_sc$xi, df_sc$xj), error = function(e) NULL)
@@ -293,7 +293,7 @@ if (length(dca_ids_all) < 2 || !file.exists(FMAT_CSV)) {
       colnames(meta_sub)
     )
     ranking_df <- meta_sub %>%
-      select(all_of(ranking_cols)) %>%
+      dplyr::select(all_of(ranking_cols)) %>%
       arrange(desc(.data[[intersect(c("S/N average", "mean_intensity"),
                                      colnames(.))[1]]]))
 
