@@ -74,16 +74,24 @@ cat(sprintf("feat_mat    : %d features x %d samples\n",
 
 # ── CA / DCA の Alignment_ID を検索 ──────────────────────────────────────────
 
-find_ids <- function(meta, ik_prefix, hmdb_id, name_pattern, preferred_id = NULL) {
+find_ids <- function(meta, ik_prefix, hmdb_id, name_pattern,
+                     name_exclude = NULL, preferred_id = NULL) {
+  # NA を除去してから返す共通処理
+  clean <- function(x) sort(unique(x[!is.na(x)]))
+
   # 1. Preferred ID が feat_meta に存在するか確認
-  if (!is.null(preferred_id) && preferred_id %in% meta$Alignment_ID) {
+  if (!is.null(preferred_id) && !is.na(preferred_id) &&
+      preferred_id %in% meta$Alignment_ID) {
     cat(sprintf("  preferred ID %d が feat_meta に存在します\n", preferred_id))
     return(preferred_id)
   }
   # 2. InChIKey プレフィックスで検索
   ik_col <- grep("inchikey|INCHIKEY", colnames(meta), ignore.case = TRUE, value = TRUE)[1]
   if (!is.na(ik_col)) {
-    hits <- meta$Alignment_ID[startsWith(toupper(meta[[ik_col]]), toupper(ik_prefix))]
+    ik_vals <- meta[[ik_col]]
+    hits <- clean(meta$Alignment_ID[
+      !is.na(ik_vals) & startsWith(toupper(ik_vals), toupper(ik_prefix))
+    ])
     if (length(hits) > 0) {
       cat(sprintf("  InChIKey (%s...) で %d 件ヒット: %s\n",
                   ik_prefix, length(hits), paste(hits, collapse = ", ")))
@@ -93,21 +101,30 @@ find_ids <- function(meta, ik_prefix, hmdb_id, name_pattern, preferred_id = NULL
   # 3. HMDB ID で検索
   hmdb_col <- grep("hmdb", colnames(meta), ignore.case = TRUE, value = TRUE)[1]
   if (!is.na(hmdb_col)) {
-    hits <- meta$Alignment_ID[grepl(hmdb_id, meta[[hmdb_col]], ignore.case = TRUE)]
+    hm_vals <- meta[[hmdb_col]]
+    hits <- clean(meta$Alignment_ID[
+      !is.na(hm_vals) & grepl(hmdb_id, hm_vals, ignore.case = TRUE)
+    ])
     if (length(hits) > 0) {
       cat(sprintf("  HMDB ID (%s) で %d 件ヒット: %s\n",
                   hmdb_id, length(hits), paste(hits, collapse = ", ")))
       return(hits)
     }
   }
-  # 4. 名前パターンで検索
-  name_col <- grep("^(Metabolite.name|Name|metabolite)", colnames(meta),
+  # 4. 名前パターンで検索（除外パターン付き）
+  name_col <- grep("^(Metabolite.name|Metabolite_name|Name)", colnames(meta),
                    ignore.case = TRUE, value = TRUE)[1]
   if (!is.na(name_col)) {
-    hits <- meta$Alignment_ID[grepl(name_pattern, meta[[name_col]], ignore.case = TRUE)]
+    nm_vals <- meta[[name_col]]
+    keep <- !is.na(nm_vals) & grepl(name_pattern, nm_vals, ignore.case = TRUE)
+    if (!is.null(name_exclude))
+      keep <- keep & !grepl(name_exclude, nm_vals, ignore.case = TRUE)
+    hits <- clean(meta$Alignment_ID[keep])
     if (length(hits) > 0) {
-      cat(sprintf("  名前パターン ('%s') で %d 件ヒット: %s\n",
-                  name_pattern, length(hits), paste(hits, collapse = ", ")))
+      cat(sprintf("  名前パターン ('%s', 除外: '%s') で %d 件ヒット: %s\n",
+                  name_pattern,
+                  if (is.null(name_exclude)) "" else name_exclude,
+                  length(hits), paste(hits, collapse = ", ")))
       return(hits)
     }
   }
@@ -115,26 +132,52 @@ find_ids <- function(meta, ik_prefix, hmdb_id, name_pattern, preferred_id = NULL
 }
 
 cat("CA を検索中...\n")
-ca_ids  <- find_ids(feat_meta, IK_CA,  HMDB_CA,  "^cholic acid$|^cholate$")
+# name_exclude で "deoxy", "tauro", "glyco" 等の修飾 CA を除く
+ca_ids  <- find_ids(feat_meta, IK_CA, HMDB_CA,
+                    name_pattern = "cholic acid|cholate",
+                    name_exclude = "deoxy|tauro|glyco|sulfo|taurocheno|glycheno")
 
 cat("DCA を検索中...\n")
 dca_ids <- find_ids(feat_meta, IK_DCA, HMDB_DCA,
-                    "deoxycholic acid|^DCA$", PREFERRED_DCA_ID)
+                    name_pattern = "deoxycholic acid|\\bDCA\\b",
+                    name_exclude = "ursodeoxy|tauro|glyco|chenodeoxy|hyodeoxy",
+                    preferred_id = PREFERRED_DCA_ID)
 
-if (length(ca_ids) == 0)  stop("CA (Cholic acid) が feature_metadata に見つかりませんでした。")
+# ── CA が見つからない場合の診断メッセージ ─────────────────────────────────────
+if (length(ca_ids) == 0) {
+  name_col_diag <- grep("^(Metabolite.name|Metabolite_name|Name)", colnames(feat_meta),
+                        ignore.case = TRUE, value = TRUE)[1]
+  cat("\n[診断] feature_metadata 中の 'cholic' を含む代謝物名:\n")
+  if (!is.na(name_col_diag)) {
+    chol_rows <- feat_meta[grepl("cholic", feat_meta[[name_col_diag]], ignore.case = TRUE) &
+                             !is.na(feat_meta[[name_col_diag]]), ]
+    if (nrow(chol_rows) > 0) {
+      print(chol_rows %>% select(Alignment_ID, all_of(name_col_diag)) %>% head(20))
+    } else {
+      cat("  'cholic' を含む名前が見つかりません。CA は未検出または Unknown の可能性があります。\n")
+    }
+  }
+  stop("CA (Cholic acid) が feature_metadata に見つかりませんでした。\n",
+       "  上記の診断結果を確認し、スクリプト先頭の IK_CA / HMDB_CA を修正するか、\n",
+       "  CA_ID を手動で設定してください（例: CA_ID <- 1234L）。")
+}
 if (length(dca_ids) == 0) stop("DCA (Deoxycholic acid) が feature_metadata に見つかりませんでした。")
 
 # 複数ヒットした場合は最も S/N が高いものを使う（または最初の1つ）
 pick_best <- function(ids, meta) {
+  ids <- ids[!is.na(ids)]          # 念のため NA を除去
+  if (length(ids) == 0) return(NA_integer_)
   if (length(ids) == 1) return(ids)
   sn_col <- grep("S.N|signal.noise|SN_average|sn_average", colnames(meta),
                  ignore.case = TRUE, value = TRUE)[1]
   if (!is.na(sn_col)) {
     sub <- meta[meta$Alignment_ID %in% ids, c("Alignment_ID", sn_col)]
     sub[[sn_col]] <- as.numeric(sub[[sn_col]])
-    best <- sub$Alignment_ID[which.max(sub[[sn_col]])]
-    cat(sprintf("  複数ヒット → S/N 最大の ID %d を採用\n", best))
-    return(best)
+    if (nrow(sub) > 0 && any(!is.na(sub[[sn_col]]))) {
+      best <- sub$Alignment_ID[which.max(sub[[sn_col]])]
+      cat(sprintf("  複数ヒット → S/N 最大の ID %d を採用\n", best))
+      return(best)
+    }
   }
   cat(sprintf("  複数ヒット → 最初の ID %d を採用\n", ids[1]))
   ids[1]
